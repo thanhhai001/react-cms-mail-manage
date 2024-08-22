@@ -11,8 +11,8 @@ function DefaultLayout() {
       <div className="w-screen w-svw w-lvw w-dvw h-screen h-svh h-lvh h-dvh h-screen h-svh h-lvh h-dvh">
         <div className="flex flex-row h-full">
           <div className={(navigate ? "hidden" : "basis-1/4") + " bg-slate-50 scroll-smooth overflow-auto"}><Sidebar /></div>
-          <div className={(navigate ? "basis-full" : "basis-3/4") + " bg-slate-300 scroll-smooth overflow-auto px-8"}>
-            <nav className="grid grid-cols-4 gap-4 place-content-center h-20">
+          <div className={(navigate ? "basis-full" : "basis-3/4") + " bg-slate-300 scroll-smooth overflow-auto"}>
+            <nav className="grid grid-cols-4 gap-4 place-content-center h-20 sticky top-0 px-8">
               <div>
                 <button
                   onClick={handleClickNavigate}
@@ -26,7 +26,14 @@ function DefaultLayout() {
               <div>icon</div>
               <div>icon</div>
             </nav>
-            <div id="page" className="h-page snap-normal">
+            <div id="page" className="h-96">
+              <div className="h-96"> HHHH</div>
+              <div className="h-96"> HHHH</div>
+              <div className="h-96"> HHHH</div>
+              <div className="h-96"> HHHH</div>
+              <div className="h-96"> HHHH</div>
+              <div className="h-96"> HHHH</div>
+              <div className="h-96"> HHHH</div>
               <Outlet />
             </div>
           </div>
