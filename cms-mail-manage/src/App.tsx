@@ -3,7 +3,7 @@ import Home from "./components/Home"
 import About from "./components/About"
 import Dashboard from "./components/Dashboard"
 import PageNotFound from "./components/PageNotFound"
-import DefaultLayout from "./components/Layout"
+import DefaultLayout from "./components/layout/index.tsx"
 function App() {
   return (
     <BrowserRouter>

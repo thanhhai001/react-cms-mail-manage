@@ -6,11 +6,6 @@ export default {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {
-      height: {
-        'h-page' : 'height: calc(100%-80px);'
-      }
-    },
   },
   plugins: [],
 }
