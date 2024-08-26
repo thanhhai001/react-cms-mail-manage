@@ -18,7 +18,15 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"],
+      "@core/*": ["./core/*"],
+      "@modules/*": ["./modules/*"],
+      "@pages/*": ["./pages/*"],
+    }
   },
-  "include": ["src"]
+  "include": ["src", "src/**/*.tsx"],
 }

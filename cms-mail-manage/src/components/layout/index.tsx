@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom"
 import Sidebar from "../Sidebar";
-
+import AuthService from "@/modules/authentication/services/authentication";
+import { ILoginForm } from "@/core/types";
+import { useForm } from "react-hook-form";
+import InputField from "@/core/components/inputField";
 function DefaultLayout() {
-
+  const { register, formState: { errors} } = useForm<ILoginForm>()
+  // const onSubmit: SubmitHandler<ILoginForm> = (data) => console.log(data)
+  const auth = new AuthService();
   const [navigate, setNavigate] = useState<boolean>(false);
-  const handleClickNavigate = () => setNavigate(!navigate)
 
+  const handleClickNavigate = () => {
+    auth.login({userName: 'user', password: 'password'});
+    setNavigate(! navigate);
+  }
 
   const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
@@ -48,7 +56,9 @@ const handleResize = () => {
                   </svg>
                 </button>
               </div>
-              <div>icon</div>
+              <div>
+                <InputField label="Test" register={register('userName')} error={errors.userName}></InputField>
+              </div>
               <div>icon</div>
               <div>icon</div>
             </nav>

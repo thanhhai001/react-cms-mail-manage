@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const [dimensions, setDimensions] = useState({
+export const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight,
   });
