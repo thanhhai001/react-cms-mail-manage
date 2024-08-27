@@ -1,25 +1,27 @@
 import { AxiosError, AxiosResponse, InternalAxiosRequestConfig } from "axios";
 import * as changeKeys from "change-case/keys";
+
 // Request
-export const  requestConfig = (config: InternalAxiosRequestConfig) => {
+export const requestConfig = (config: InternalAxiosRequestConfig) => {
     // do something
     config.data = changeKeys.snakeCase(config.data);
     return config
 }
 
-export const  requestError = (error: AxiosError) => {
+export const requestError = (error: AxiosError) => {
     // do something
     return Promise.reject(error);
 }
 
 // Response
-export const  responseConfig = (response: AxiosResponse) => {
+export const responseConfig = (response: AxiosResponse) => {
     // do something
     response.data = changeKeys.camelCase(response.data);
-    return response
+    return response;
 }
 
-export const  responseError = (error: AxiosError) => {
+export const responseError = (error: AxiosError) => {
     // do something
-    return Promise.reject(error);
+    Promise.reject(error)
+    return { status: error.response?.status, data: error.response?.data };
 }

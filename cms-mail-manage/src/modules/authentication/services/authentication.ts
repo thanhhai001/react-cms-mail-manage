@@ -1,5 +1,7 @@
 import { ApiServiceBase } from '@core/services/apiServiceBase'
 import { ILoginForm } from '../types';
+import { ServerResponse } from 'http';
+import { AxiosResponse } from 'axios';
 
 const servicePaths = {
     login: 'login',
@@ -10,12 +12,12 @@ class AuthService extends ApiServiceBase {
     constructor() {
         super();
     }
-    public login (data: ILoginForm) {
-        return this.post(servicePaths.login, data);
+    public login(data: ILoginForm) {
+        return super.post(servicePaths.login, data, { transformResponse: (resp: AxiosResponse) => ({ status: resp.status, data: resp.data }) });
     }
 
-    public logout () {
-        return this.get(servicePaths.logout);
+    public logout() {
+        return super.get(servicePaths.logout);
     }
 }
 

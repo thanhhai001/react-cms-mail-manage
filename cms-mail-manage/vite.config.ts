@@ -10,7 +10,8 @@ export default defineConfig({
       { find: "@", replacement: path.resolve(__dirname, "src") },
       { find: "@core", replacement: path.resolve(__dirname, "src/core") },
       { find: "@modules", replacement: path.resolve(__dirname, "src/modules") },
-      { find: "@pages", replacement: path.resolve(__dirname, "src/pages") }
+      { find: "@pages", replacement: path.resolve(__dirname, "src/pages") },
+      { find: "@helpers", replacement: path.resolve(__dirname, "src/utils/helpers") }
     ],
   },
 })

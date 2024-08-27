@@ -26,6 +26,7 @@
       "@core/*": ["./core/*"],
       "@modules/*": ["./modules/*"],
       "@pages/*": ["./pages/*"],
+      "@helpers/*": ["./utils/helpers/*"],
     }
   },
   "include": ["src", "src/**/*.tsx"],

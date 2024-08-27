@@ -4,7 +4,7 @@ import Sidebar from "../Sidebar";
 import AuthService from "@/modules/authentication/services/authentication";
 import { ILoginForm } from "@/core/types";
 import { useForm } from "react-hook-form";
-import InputField from "@/core/components/inputField";
+import InputField from "@/core/components/FieldBase";
 function DefaultLayout() {
   const { register, formState: { errors} } = useForm<ILoginForm>()
   // const onSubmit: SubmitHandler<ILoginForm> = (data) => console.log(data)
